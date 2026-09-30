@@ -101,7 +101,18 @@ def update_patient(patient_id:str,patient_update=PatientUpdate):
     existing_patient_info=patient_pydantic_obj.model_dump(exclude='id')
     data[patient_id]=existing_patient_info
     save_data(data)
-    return JSONResponse(status_code=200,content={'message:patient updated'})   
+    return JSONResponse(status_code=200,content={'message:patient updated'})  
+@app.delete('/delete/{patient_id}')
+def delete_patient(patient_id:str):
+    data=load_data()
+    if patient_id not in data:
+        raise HTTPException(status=404,detail="Patient Donot Exist")   
+    item=data[patient_id]
+    del item
+    save_data(data)
+    return JSONResponse(status_code=200,content={'message':'patient deleted'})
+
+
 
 
 
