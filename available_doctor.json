@@ -1,0 +1,32 @@
+{   "Child Specialist":
+    {
+        "name":"Dr Sujata Roy",
+        "age":29,
+        "day":"Monday,Tuesday,Thurday",
+        "Time":"8:30pm"
+    },
+    "Gynocologist":
+    {
+        "name":"Dr. Mala Bose",
+        "age":53,
+        "day":"Monday,Friday,Thursday",
+        "Time":"7:45 pm-10pm"
+    },
+    "General Physician":
+    {
+        "name":" Dr. Debol Bode",
+        "age":48,
+        "day":"Tuesday,Wednesday,Sturday",
+        "Time":"6:30pm-8:30pm"
+    },
+    "ENT":
+    {
+        "name":"Dr. Dibendhu Pal",
+        "age":52,
+        "day":"Friday,Studay,Sunday",
+        "Time":"10:30am-12:30 am"
+    }
+
+
+
+}

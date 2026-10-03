@@ -61,6 +61,13 @@ def save_data(data):
 def view():
     data=load_data()
     return data
+@app.get("/doctor_detaiils")
+def doctor_info():
+    with open  ("available_doctor.json","r") as detail:
+        data1=load(detail)
+    return data1    
+
+
 @app.get("/patient/{patient_id}") 
 def view_patient(patient_id: str=Path(...,description='Id of the Patient',examples='P001')):
     data=load_data()
@@ -112,7 +119,15 @@ def delete_patient(patient_id:str):
     save_data(data)
     return JSONResponse(status_code=200,content={'message':'patient deleted'})
 
+@app.get('/available doctor')
+def doctor_schedule_view(doctor_criteria:str):
 
+    data1=doctor_info()
+    if doctor_criteria in data1:
+        return data1[doctor_criteria]
+    else:
+        raise HTTPException(status_code=400,content={'message':'No doctor Available'})    
+    
 
 
 
